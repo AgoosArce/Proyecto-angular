@@ -113,7 +113,15 @@ npm install
 npm start          # http://localhost:4200
 ```
 
-### 2.5 Crear usuarios adicionales (opcional, solo desarrollo)
+### 2.5 Cargar datos de prueba (usuarios, roles, materias y alumnos)
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\cargar-datos-prueba.ps1
+```
+
+Ejecuta [scripts/seed-datos-prueba.sql](scripts/seed-datos-prueba.sql), que se puede correr varias veces sin duplicar datos. Crea 2 admins (`admin@test.com` / `Admin123!`), 3 usuarios de consulta (`docente@test.com` / `Usuario123!`, …), 8 materias y 30 alumnos. Requiere haber aplicado las migraciones (paso 2.2). Sin `sqlcmd`, abra el `.sql` en SSMS o Visual Studio y ejecútelo sobre `testprueba`.
+
+### 2.6 Crear usuarios adicionales (opcional, solo desarrollo)
 
 ```bash
 cd SeedUser
