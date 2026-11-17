@@ -1,0 +1,4 @@
+:host { display: flex; flex-direction: column; min-height: 100dvh; }
+main { flex: 1; }
+.skip-link { position: fixed; top: -100px; left: 16px; z-index: 1000; background: #fff; padding: 12px 20px; }
+.skip-link:focus { top: 12px; }

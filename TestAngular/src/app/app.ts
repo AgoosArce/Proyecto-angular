@@ -1,0 +1,15 @@
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { Footer } from './footer/footer';
+import { Header } from './header/header';
+
+@Component({
+  standalone: true,
+  selector: 'app-root',
+  imports: [RouterOutlet, Footer, Header],
+  templateUrl: './app.html',
+  styleUrl: './app.scss'
+})
+export class App {
+  protected title = 'TestAngular';
+}

@@ -1,0 +1,34 @@
+.alumnos {
+  padding: 0;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.filtro-nombre { flex: 1 1 240px; }
+.filtro-materia { flex: 0 1 220px; }
+.spacer { flex: 1 1 auto; }
+
+table { width: 100%; }
+
+.sin-datos {
+  padding: 24px;
+  text-align: center;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.mensaje.error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: var(--mat-sys-error-container);
+  color: var(--mat-sys-on-error-container);
+  white-space: pre-line;
+}

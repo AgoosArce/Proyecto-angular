@@ -1,0 +1,29 @@
+<div class="auth-page">
+  <span class="eyebrow">PORTAL INSTITUCIONAL</span><h1>Crear una cuenta</h1>
+  <p>Complete sus datos para acceder al portal académico.</p>
+
+  <form #form="ngForm" (ngSubmit)="form.valid && submit()" [attr.aria-busy]="enviando">
+    <label>
+      Nombre
+      <input type="text" autocomplete="name" [(ngModel)]="nombre" name="nombre" required />
+    </label>
+
+    <label>
+      Email
+      <input type="email" autocomplete="email" [(ngModel)]="email" name="email" required email #emailControl="ngModel" />
+      @if (emailControl.invalid && emailControl.touched) { <small class="field-error">Ingrese un correo electrónico válido.</small> }
+    </label>
+
+    <label>
+      Contraseña
+      <input type="password" autocomplete="new-password" [(ngModel)]="password" name="password" required />
+    </label>
+
+    <button class="button" type="submit" [disabled]="enviando">{{ enviando ? 'Creando cuenta...' : 'Crear cuenta' }}</button>
+  </form>
+
+  <p role="alert" class="error" *ngIf="error">{{ error }}</p>
+  <p>
+    ¿Ya tiene cuenta? <a routerLink="/auth/login">Iniciar sesión</a>
+  </p>
+</div>

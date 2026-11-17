@@ -1,0 +1,18 @@
+# .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+TestResults/
+
+# Angular / Node
+node_modules/
+TestAngular/dist/
+TestAngular/.angular/
+
+# Secretos y respaldos locales
+appsettings.*.local.json
+*.env
+backups/
+*.bak

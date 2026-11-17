@@ -1,0 +1,20 @@
+:host { display: block; }
+.site-header { background: #fff; border-top: 4px solid var(--institution-primary); }
+.header-main, .nav-inner { width: min(1200px, calc(100% - 64px)); margin: auto; display: flex; align-items: center; }
+.header-main { min-height: 96px; justify-content: space-between; gap: 24px; padding: 16px 0; }
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.brand-mark { display: grid; place-items: center; width: 46px; height: 50px; border: 1px solid var(--institution-accent); border-radius: 3px 3px 16px 16px; color: var(--institution-primary); font-size: 18px; font-weight: 700; }
+.brand strong { display: block; font-size: 21px; font-weight: 500; }
+.brand small { display: block; color: var(--institution-muted); font-size: 10px; letter-spacing: 2px; }
+.auth-actions { display: flex; align-items: center; gap: 24px; font-size: 13px; }
+.auth-actions a { text-decoration: none; }
+.access { background: var(--institution-primary); color: #fff; padding: 11px 17px; border-radius: 4px; }
+.access span { margin-left: 14px; }
+.user-name small { display: block; color: var(--institution-muted); }
+.logout { background: #fff; border: 1px solid var(--institution-border); color: var(--institution-primary); padding: 8px 14px; border-radius: 4px; cursor: pointer; }
+nav { background: var(--institution-primary); }
+.nav-inner { gap: 30px; min-height: 52px; flex-wrap: wrap; }
+nav a { color: #dce6f0; text-decoration: none; padding: 14px 2px 11px; border-bottom: 3px solid transparent; font-size: 14px; }
+nav a:hover, nav a.active { color: #fff; border-bottom-color: #c8ac70; }
+.nav-caption { margin-left: auto; font-size: 12px; color: #bacbda; }
+@media(max-width: 680px) { .header-main, .nav-inner { width: calc(100% - 32px); } .header-main { flex-wrap: wrap; gap: 18px; } .brand strong { font-size: 19px; } .auth-actions { gap: 20px; flex-wrap: wrap; } .nav-inner { gap: 18px; } .nav-caption { display: none; } }

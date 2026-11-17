@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>{{ data.materia ? 'Editar materia' : 'Nueva materia' }}</h2>
+
+<mat-dialog-content>
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre</mat-label>
+    <input matInput [(ngModel)]="nombre" placeholder="Nombre" required maxlength="100">
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button type="button" (click)="cancelar()">Cancelar</button>
+  <button mat-raised-button color="primary" type="button" (click)="confirmar()" [disabled]="nombre.trim().length < 2">
+    {{ data.materia ? 'Guardar' : 'Agregar' }}
+  </button>
+</mat-dialog-actions>

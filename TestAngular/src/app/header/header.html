@@ -1,0 +1,25 @@
+<header class="site-header">
+  <div class="header-main">
+    <a class="brand" routerLink="/home" aria-label="Gestión Académica · Inicio"><span class="brand-mark" aria-hidden="true">GA</span><span><strong>Gestión Académica</strong><small>SISTEMA INSTITUCIONAL</small></span></a>
+    <div class="auth-actions">
+      @if (auth.isLoggedIn()) {
+        <span class="user-name">{{ auth.getNombre() }}<small>{{ auth.getRol() }}</small></span>
+        <button class="logout" type="button" (click)="logout()">Cerrar sesión</button>
+      } @else {
+        <a routerLink="/auth/register">Crear cuenta</a>
+        <a class="access" routerLink="/auth/login">Iniciar sesión <span aria-hidden="true">→</span></a>
+      }
+    </div>
+  </div>
+  <nav aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Inicio</a>
+      @if (auth.isLoggedIn()) {
+        <a routerLink="/dashboardA" routerLinkActive="active" ariaCurrentWhenActive="page">Alumnos</a>
+        <a routerLink="/dashboardB" routerLinkActive="active" ariaCurrentWhenActive="page">Materias</a>
+      }
+      @if (auth.isAdmin()) { <a routerLink="/dashboardC" routerLinkActive="active" ariaCurrentWhenActive="page">Administración</a> }
+      <span class="nav-caption">Portal de gestión académica</span>
+    </div>
+  </nav>
+</header>

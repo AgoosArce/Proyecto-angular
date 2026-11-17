@@ -1,0 +1,44 @@
+<section class="materias">
+  @if (esAdmin) {
+    <button mat-raised-button color="primary" type="button" (click)="agregarMateria()">
+      Nueva materia
+    </button>
+  }
+
+  @if (cargando) {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  }
+
+  @if (error) {
+    <div class="list-error" role="alert"><span>{{ error }}</span><button mat-button type="button" (click)="cargarMaterias()">Reintentar</button></div>
+  }
+
+  <table mat-table [dataSource]="materia" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let materia"> {{ materia.id }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let materia"> {{ materia.nombre }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let materia">
+        <button mat-button color="primary" type="button" (click)="editarMateria(materia)">Editar</button>
+        <button mat-button color="warn" type="button" (click)="eliminar(materia)">Eliminar</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell sin-datos" [attr.colspan]="displayedColumns.length">
+        @if (!cargando && !error) { Todavía no hay materias cargadas. }
+      </td>
+    </tr>
+  </table>
+</section>
